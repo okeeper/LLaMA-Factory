@@ -2,6 +2,26 @@
   "identity": {
     "file_name": "identity.json"
   },
+  "xd_final_sft": {
+    "file_name": "xd/xd_final_sft.json"
+  },
+
+  "xd_pretain_mix": {
+    "file_name": "xd/xd_pretain_mix.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+
+
+
+
+
+
+
+
+
+
   "alpaca_en_demo": {
     "file_name": "alpaca_en_demo.json"
   },
