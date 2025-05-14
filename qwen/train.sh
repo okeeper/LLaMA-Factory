@@ -9,7 +9,7 @@ llamafactory-cli chat \
     --infer_backend huggingface
 
 llamafactory-cli chat \
-    --model_name_or_path /home/zhangyue/data/LLaMA-Factory/saves/qwen3_full_pt_sft2 \
+    --model_name_or_path /home/zhangyue/data/LLaMA-Factory/saves/qwen3_full_pt_sft3 \
     --template qwen \
     --infer_backend huggingface
 

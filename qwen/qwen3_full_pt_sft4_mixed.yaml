@@ -12,7 +12,7 @@ freeze_language_model: false
 deepspeed: examples/deepspeed/ds_z3_config.json
 
 ### dataset
-dataset: xd_final_sft,xd_alpaca_novel_data,alpaca_zh_demo,xd_final_sft
+dataset: xd_alpaca_mixed_dataset
 template: qwen3
 cutoff_len: 1024
 max_samples: 10000
@@ -21,7 +21,7 @@ preprocessing_num_workers: 16
 dataloader_num_workers: 4
 
 ### output
-output_dir: saves/qwen3_full_pt_sft3
+output_dir: saves/qwen3_full_pt_sft4_mixed
 logging_steps: 1
 save_steps: 1000
 plot_loss: true
@@ -32,7 +32,7 @@ report_to: wandb  # choices: [none, wandb, tensorboard, swanlab, mlflow]
 ### train
 per_device_train_batch_size: 1
 gradient_accumulation_steps: 2
-learning_rate: 1.0e-6
+learning_rate: 1.0e-8
 num_train_epochs: 3.0
 lr_scheduler_type: cosine
 warmup_ratio: 0.1

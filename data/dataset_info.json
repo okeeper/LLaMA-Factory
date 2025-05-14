@@ -16,6 +16,10 @@
     "file_name": "xd/xd_alpaca_novel_data.json"
   },
 
+  "xd_alpaca_mixed_dataset": {
+    "file_name": "xd/xd_alpaca_mixed_dataset.json"
+  },
+
 
 
 
