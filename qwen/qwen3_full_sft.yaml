@@ -12,9 +12,9 @@ freeze_language_model: false
 deepspeed: examples/deepspeed/ds_z3_config.json
 
 ### dataset
-dataset: xd_final_sft,xd_pretain_mix
+dataset: xd_final_sft
 template: qwen3
-cutoff_len: 2048
+cutoff_len: 512
 max_samples: 10000
 overwrite_cache: true
 preprocessing_num_workers: 16
@@ -22,7 +22,7 @@ dataloader_num_workers: 4
 
 ### output
 output_dir: saves/qwen3_full_sft
-logging_steps: 10
+logging_steps: 1
 save_steps: 500
 plot_loss: true
 overwrite_output_dir: true

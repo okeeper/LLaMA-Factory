@@ -1,7 +1,9 @@
 MODEL_PATH=/data/hf-models/Qwen3-8B
 
+llamafactory-cli train qwen/qwen3_full_sft.yaml
+
 # 设置环境变量
-export CUDA_VISIBLE_DEVICES=5,6,7
+export CUDA_VISIBLE_DEVICES=1,2,3
 
 # 全参数微调
 llamafactory-cli train \
@@ -9,10 +11,9 @@ llamafactory-cli train \
     --trust_remote_code \
     --stage sft \
     --do_train \
-    --deepspeed examples/deepspeed/my_ds.json \
     --finetuning_type full \
     --dataset xd_final_sft \
-    --template qwen3 \
+    --template qwen \
     --cutoff_len 512 \
     --max_samples 10000 \
     --overwrite_cache \
