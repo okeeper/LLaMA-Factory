@@ -33,10 +33,10 @@ llamafactory-cli train qwen/qwen3_full_pt_sft2.yaml
 
 
 # 基于预训练版进行sft,添加novel数据扩充。增加训练轮次，降低学习率
-CUDA_VISIBLE_DEVICES=0,1,2,4 llamafactory-cli train qwen/qwen3_full_pt_sft3.yaml 
+CUDA_VISIBLE_DEVICES=0,1,2,3 llamafactory-cli train qwen/qwen3_full_pt_sft3.yaml 
 
-
-
+# 基于预训练版进行sft,添加novel数据扩充。增加训练轮次，降低学习率, 混合数据集
+CUDA_VISIBLE_DEVICES=0,1,2,3 llamafactory-cli train qwen/qwen3_full_pt_sft4_mixed.yaml 
 
 
 
