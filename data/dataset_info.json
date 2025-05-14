@@ -12,6 +12,9 @@
       "prompt": "text"
     }
   },
+  "xd_alpaca_novel_data": {
+    "file_name": "xd/xd_alpaca_novel_data.json"
+  },
 
 
 
