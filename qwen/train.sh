@@ -1,12 +1,23 @@
 MODEL_PATH=/data/hf-models/Qwen3-8B
 # 设置环境变量
-export CUDA_VISIBLE_DEVICES=1,2,3
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 
-llamafactory-cli chat inference_config.yaml \
-    --model_name_or_path /data/hf-models/Qwen3-8B
+# 推理测试
+llamafactory-cli chat \
+    --model_name_or_path /data/hf-models/Qwen3-8B \
+    --template qwen \
+    --infer_backend huggingface
 
+llamafactory-cli chat \
+    --model_name_or_path saves/qwen3_full_sft \
+    --template qwen \
+    --infer_backend huggingface
+
+
+# 基于基础模型进行全参数微调
 llamafactory-cli train qwen/qwen3_full_sft.yaml \
     --model_name_or_path /data/hf-models/Qwen3-8B \
+    --output_dir saves/qwen3_full_sft \
     --dataset xd_final_sft \
     --per_device_train_batch_size 4 \
     --gradient_accumulation_steps 2 \
@@ -14,8 +25,8 @@ llamafactory-cli train qwen/qwen3_full_sft.yaml \
     --num_train_epochs 2.0 \
     --cutoff_len 512
 
-
-llamafactory-cli chat inference_config.yaml
+# 基于
+llamafactory-cli train qwen/qwen3_full_pt_sft.yaml 
 
 
 
