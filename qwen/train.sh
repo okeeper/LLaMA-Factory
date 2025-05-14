@@ -1,9 +1,36 @@
 MODEL_PATH=/data/hf-models/Qwen3-8B
-
-llamafactory-cli train qwen/qwen3_full_sft.yaml
-
 # 设置环境变量
 export CUDA_VISIBLE_DEVICES=1,2,3
+
+llamafactory-cli chat inference_config.yaml \
+    --model_name_or_path /data/hf-models/Qwen3-8B
+
+llamafactory-cli train qwen/qwen3_full_sft.yaml \
+    --model_name_or_path /data/hf-models/Qwen3-8B \
+    --dataset xd_final_sft \
+    --per_device_train_batch_size 4 \
+    --gradient_accumulation_steps 2 \
+    --learning_rate 1e-5 \
+    --num_train_epochs 2.0 \
+    --cutoff_len 512
+
+
+llamafactory-cli chat inference_config.yaml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 全参数微调
 llamafactory-cli train \
