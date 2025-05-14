@@ -9,7 +9,7 @@ llamafactory-cli chat \
     --infer_backend huggingface
 
 llamafactory-cli chat \
-    --model_name_or_path saves/qwen3_full_sft \
+    --model_name_or_path /home/zhangyue/data/LLaMA-Factory/saves/qwen3_full_pt_sft2 \
     --template qwen \
     --infer_backend huggingface
 
@@ -25,10 +25,11 @@ llamafactory-cli train qwen/qwen3_full_sft.yaml \
     --num_train_epochs 2.0 \
     --cutoff_len 512
 
-# 基于
+# 基于预训练版进行sft
 llamafactory-cli train qwen/qwen3_full_pt_sft.yaml 
 
-
+# 基于预训练版进行sft,添加novel数据扩充
+llamafactory-cli train qwen/qwen3_full_pt_sft2.yaml 
 
 
 
