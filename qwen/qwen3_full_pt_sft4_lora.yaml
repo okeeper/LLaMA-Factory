@@ -10,7 +10,7 @@ lora_rank: 64
 lora_target: all
 
 ### dataset
-dataset: xd_alpaca_mixed_dataset
+dataset: xd_final_sft
 template: qwen3
 cutoff_len: 2048
 max_samples: 10000
