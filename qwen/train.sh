@@ -14,6 +14,12 @@ llamafactory-cli chat \
     --template qwen \
     --infer_backend huggingface
 
+llamafactory-cli chat \
+    --model_name_or_path /home/zhangyue/data/pre-train-learning/output/qwen3_novel_full_pretrain \
+    --adapter_name_or_path /home/zhangyue/data/LLaMA-Factory/saves/qwen3_full_pt_sft4_lora \
+    --template qwen \
+    --infer_backend huggingface
+
 
 # 基于基础模型进行全参数微调
 llamafactory-cli train qwen/qwen3_full_sft.yaml \
@@ -43,7 +49,8 @@ CUDA_VISIBLE_DEVICES=0,2,3,4 llamafactory-cli train qwen/qwen3_full_pt_sft4_mixe
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 llamafactory-cli train qwen/qwen3_full_pt_sft4_mixed_lora.yaml 
 
 
-
+# 基于预训练版进行sft,添加novel数据扩充。增加训练轮次，降低学习率, 混合数据集, 添加lora
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 llamafactory-cli train qwen/qwen3_full_pt_sft4_lora.yaml 
 
 
 
